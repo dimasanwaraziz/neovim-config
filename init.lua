@@ -16,6 +16,7 @@ vim.cmd([[
     set softtabstop=4
     set tabstop=4
 ]])
+vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], {})
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
