@@ -9,7 +9,8 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "pyright", "yamlls" },
+				-- ensure_installed = { "lua_ls", "pyright", "yamlls" },
+				automatic_installation = true,
 			})
 		end,
 	},
@@ -26,6 +27,12 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.yamlls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.eslint.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.tsserver.setup({
 				capabilities = capabilities,
 			})
 
